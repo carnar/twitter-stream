@@ -30,6 +30,13 @@
             border-radius: 5px;
             margin-bottom: 20px;
         }
+
+        p.quoted {
+            margin-left: 30px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body id="app-layout">

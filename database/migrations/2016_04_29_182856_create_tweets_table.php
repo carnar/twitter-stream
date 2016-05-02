@@ -16,6 +16,7 @@ class CreateTweetsTable extends Migration
             $table->bigIncrements('id');
             $table->text('json');
             $table->string('tweet_text')->nullable();
+            $table->string('tweet_quoted')->nullable();
             $table->string('user_id')->nullable();
             $table->string('user_screen_name')->nullable();
             $table->string('user_avatar_url')->nullable();

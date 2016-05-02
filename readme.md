@@ -13,9 +13,11 @@ Creating previously the database run the next command in terminal.
 ## Get tweets
 Connect to twitter and push tweets into the queue. 
 
-    php artisan connect-to-streaming-api
+    php artisan tweets:get query
 
-For stop process run break command. 
+*query* is the text to search, if has many words use doble quotation marks like "Something to search".
+
+Stop process running break command. 
 
     Ctrl ^C
 
@@ -24,5 +26,5 @@ For stop process run break command.
     php artisan queue:listen
 
 ## Usage
-Go to homepage and view approved tweets or create an account and access to admin panel for approve o unapprove tweets.
+Go to homepage and view approved tweets or create an account and access to admin panel for approve or unapprove tweets.
 

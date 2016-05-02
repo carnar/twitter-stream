@@ -5,7 +5,7 @@ namespace App\Console\Commands;
 use App\TwitterStream;
 use Illuminate\Console\Command;
 
-class ConnectToStreamingAPI extends Command
+class GetTweets extends Command
 {
     private $twitterStream;
 
@@ -14,14 +14,14 @@ class ConnectToStreamingAPI extends Command
      *
      * @var string
      */
-    protected $signature = 'connect-to-streaming-api';
+    protected $signature = 'tweets:get {query : Text to search}';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Connect to Twitter streaming API';
+    protected $description = 'Get tweets from Twitter streaming API';
 
     /**
      * Create a new command instance.
@@ -47,7 +47,7 @@ class ConnectToStreamingAPI extends Command
 
         $this->twitterStream->consumerKey = $twitter_consumer_key;
         $this->twitterStream->consumerSecret = $twitter_consumer_secret;
-        $this->twitterStream->setTrack(array('coding'));
+        $this->twitterStream->setTrack(array($this->argument('query')));
         $this->twitterStream->consume();
     }
 }
